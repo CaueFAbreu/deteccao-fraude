@@ -67,11 +67,12 @@ O serviço não retornará sucesso com score inventado quando houver falha. Entr
 
 As limitações que devem acompanhar qualquer apresentação dos resultados são:
 
+- `Time` mede segundos desde a primeira transação de um recorte de 48 horas; não há referência equivalente para transações novas, e padrões aprendidos a partir dele não devem ser presumidos válidos no futuro.
 - O modelo depende da representação `V1`–`V28`. Não é possível presumir sua obtenção a partir de dados brutos de uma nova compra sem a transformação de origem apropriada.
 - Resultados no dataset não garantem desempenho em outros períodos, instituições, populações ou distribuições de fraude.
 - A divisão aleatória estratificada deste benchmark não comprova desempenho futuro. Essa afirmação exigiria avaliação temporal apropriada.
 - A classe rara pode produzir estimativas instáveis. Reportar contagens de positivos, falsos positivos e falsos negativos junto às métricas.
-- Pela descrição pública, o dataset tem cerca de 284.807 transações e 492 fraudes; os números reais serão confirmados na auditoria dos dados. Com a divisão 60/20/20, validação e teste terão cerca de 98 fraudes cada. Assim, cada fraude equivale a aproximadamente 1 ponto percentual de recall, e poucos falsos positivos podem mover a precision em torno da meta de 0,80. Reportar intervalos de confiança e evitar conclusões fortes a partir de diferenças pequenas.
+- Após a remoção das duplicatas exatas, o dataset tem 283.726 transações e 473 fraudes (ver `docs/02_dados.md`). Com a divisão 60/20/20, validação e teste terão cerca de 95 fraudes cada. Assim, cada fraude equivale a aproximadamente 1 ponto percentual de recall, e poucos falsos positivos podem mover a precision em torno da meta de 0,80. Reportar intervalos de confiança e evitar conclusões fortes a partir de diferenças pequenas.
 - O score não deve ser anunciado como probabilidade confiável sem avaliação de calibração.
 - A equipe controla o pré-processamento que implementar, mas não pode garantir ausência de vazamento no processo original de anonimização do dataset.
 
