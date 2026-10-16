@@ -1,0 +1,9 @@
+# Dependências de desenvolvimento: testes, lint e exploração.
+# Inclui também as dependências de execução.
+-r requirements.txt
+
+pytest==9.1.1
+httpx==0.28.1
+ruff==0.17.1
+jupyter==1.1.1
+matplotlib==3.11.2
