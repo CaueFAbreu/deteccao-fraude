@@ -1,25 +1,17 @@
-
-
-
-
+# Ambiente virtual
 .venv/
 venv/
 env/
 
-
-
+# Dados e artefatos (gerados localmente; ver README)
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
-
-
-
 artifacts/*
 !artifacts/.gitkeep
 
-
-
+# Segredos
 .env
 .env.*
 !.env.example
@@ -27,34 +19,32 @@ kaggle.json
 *.pem
 *.key
 
-
-
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
 build/
 dist/
 
-
-
+# Ferramentas
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
 .coverage
 .coverage.*
 htmlcov/
-.ruff_cache/
-.mypy_cache/
-
-
 .ipynb_checkpoints/
 
-
-
+# Editores e sistema operacional
 .vscode/
 .idea/
 Thumbs.db
 Desktop.ini
 .DS_Store
 
-
-
+# Logs
 *.log
 logs/
+
+# Documentos locais
+Plano_Projeto_Deteccao_Fraude.md

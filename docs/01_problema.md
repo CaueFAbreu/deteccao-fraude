@@ -3,7 +3,6 @@
 **Versão:** 1.1 (inclui condições da demonstração e limitação sobre o número de fraudes)  
 **Data:** 15/10/2026  
 **Status:** especificação para implementação; metas ainda não medidas.  
-**Referência:** Plano_Projeto_Deteccao_Fraude.md, versão 1.0.
 
 ## 1. Objetivo
 
@@ -62,7 +61,7 @@ O serviço não retornará sucesso com score inventado quando houver falha. Entr
 
 ## 6. Uso permitido e limitações
 
-**Usos previstos:** aprendizado, portfólio, experimentação reproduzível, comparação de classificadores e demonstração de integração com uma API usando dados públicos compatíveis com o contrato e seus termos de uso.
+**Usos previstos:** experimentação reproduzível, comparação de classificadores e demonstração de integração com uma API usando dados públicos compatíveis com o contrato e seus termos de uso.
 
 **Usos fora do escopo:** bloquear pagamentos reais, encerrar contas, acusar pessoas, determinar concessão de crédito ou tomar decisões financeiras automaticamente. O modelo não deve ser apresentado como um detector validado para operação bancária.
 
@@ -72,7 +71,7 @@ As limitações que devem acompanhar qualquer apresentação dos resultados são
 - Resultados no dataset não garantem desempenho em outros períodos, instituições, populações ou distribuições de fraude.
 - A divisão aleatória estratificada deste benchmark não comprova desempenho futuro. Essa afirmação exigiria avaliação temporal apropriada.
 - A classe rara pode produzir estimativas instáveis. Reportar contagens de positivos, falsos positivos e falsos negativos junto às métricas.
-- Pela descrição pública, o dataset tem cerca de 284.807 transações e 492 fraudes; os números reais serão confirmados na auditoria (Etapa 3). Com a divisão 60/20/20, validação e teste terão cerca de 98 fraudes cada. Assim, cada fraude equivale a aproximadamente 1 ponto percentual de recall, e poucos falsos positivos podem mover a precision em torno da meta de 0,80. Reportar intervalos de confiança e evitar conclusões fortes a partir de diferenças pequenas.
+- Pela descrição pública, o dataset tem cerca de 284.807 transações e 492 fraudes; os números reais serão confirmados na auditoria dos dados. Com a divisão 60/20/20, validação e teste terão cerca de 98 fraudes cada. Assim, cada fraude equivale a aproximadamente 1 ponto percentual de recall, e poucos falsos positivos podem mover a precision em torno da meta de 0,80. Reportar intervalos de confiança e evitar conclusões fortes a partir de diferenças pequenas.
 - O score não deve ser anunciado como probabilidade confiável sem avaliação de calibração.
 - A equipe controla o pré-processamento que implementar, mas não pode garantir ausência de vazamento no processo original de anonimização do dataset.
 
@@ -80,7 +79,7 @@ As limitações que devem acompanhar qualquer apresentação dos resultados são
 
 **Regra principal:** selecionar o par modelo–limiar que maximize o recall de fraude na validação, sujeito a **precision ≥ 0,80** no mesmo conjunto.
 
-Precision é `TP / (TP + FP)` e recall é `TP / (TP + FN)`. TP são fraudes detectadas, FP são alertas em transações legítimas e FN são fraudes não detectadas. O limite de 80% é uma meta didática definida antes dos experimentos; não é garantia de desempenho futuro nem requisito validado por uma instituição financeira.
+Precision é `TP / (TP + FP)` e recall é `TP / (TP + FN)`. TP são fraudes detectadas, FP são alertas em transações legítimas e FN são fraudes não detectadas. O limite de 80% é uma meta de referência definida antes dos experimentos; não é garantia de desempenho futuro nem requisito validado por uma instituição financeira.
 
 Aplicar o seguinte procedimento:
 
@@ -117,7 +116,7 @@ A varredura de limiares utiliza scores já calculados e não envolve novos trein
 
 **Ambiente:** a demonstração será **apenas local**, na máquina do desenvolvedor, com a API em contêiner Docker acessível somente por `localhost` (porta publicada em `127.0.0.1`). Não haverá exposição na internet nem em rede compartilhada.
 
-**Fora do escopo desta versão:** HTTPS, autenticação, limites de requisição e de tamanho e CORS. Se a API vier a ser exposta, esses controles passam a ser obrigatórios, conforme a Etapa 10 do plano: HTTPS, chave de acesso mantida em configuração externa, limites de requisição e tamanho, e testes com credencial válida, inválida e ausente. Qualquer mudança de exposição exige revisar este documento antes.
+**Fora do escopo desta versão:** HTTPS, autenticação, limites de requisição e de tamanho e CORS. Se a API vier a ser exposta, esses controles passam a ser obrigatórios: HTTPS, chave de acesso mantida em configuração externa, limites de requisição e tamanho, e testes com credencial válida, inválida e ausente. Qualquer mudança de exposição exige revisar este documento antes.
 
 **Dados:** cada pessoa obtém o dataset pela fonte oficial, seguindo o README. O arquivo não será redistribuído no repositório.
 
