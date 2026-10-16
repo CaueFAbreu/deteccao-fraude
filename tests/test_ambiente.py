@@ -20,7 +20,6 @@ def ler_versoes_fixadas():
         texto = (RAIZ_PROJETO / nome_arquivo).read_text(encoding="utf-8")
         for linha in texto.splitlines():
             linha = linha.strip()
-            
             if not linha or linha.startswith(("#", "-")):
                 continue
             assert "==" in linha, f"Versão não fixada em {nome_arquivo}: {linha}"
