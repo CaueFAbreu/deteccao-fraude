@@ -1,0 +1,17 @@
+{
+  "dados": {
+    "arquivo": "data/raw/creditcard.csv",
+    "sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+  },
+  "semente": 42,
+  "fracoes": {
+    "treino": 0.6,
+    "validacao": 0.2,
+    "teste": 0.2
+  },
+  "n_folds": 3,
+  "saidas": {
+    "particoes": "data/processed/particoes.csv",
+    "resumo": "reports/particoes.json"
+  }
+}

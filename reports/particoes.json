@@ -1,0 +1,52 @@
+{
+  "sha256_dados": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89",
+  "semente": 42,
+  "fracoes": {
+    "treino": 0.6,
+    "validacao": 0.2,
+    "teste": 0.2
+  },
+  "n_folds": 3,
+  "linhas": 283726,
+  "fraudes": 473,
+  "particoes": {
+    "treino": {
+      "linhas": 170235,
+      "fraudes": 284,
+      "taxa_fraude": 0.001668,
+      "sha256_indices": "57d4b7c0eeafe90eaca1cdcfc48645f3fd1f0b555264c36ce7581b67f4854092"
+    },
+    "validacao": {
+      "linhas": 56745,
+      "fraudes": 94,
+      "taxa_fraude": 0.001657,
+      "sha256_indices": "c01410f504a33a20c28eaed4cc4fd53d63bc2dcc2cb5aec47a211392734e48e6"
+    },
+    "teste": {
+      "linhas": 56746,
+      "fraudes": 95,
+      "taxa_fraude": 0.001674,
+      "sha256_indices": "fcc2dd2a49fceaeeb694583a395be55351db7c14622e54ea5caada3c5e85f784"
+    }
+  },
+  "folds": {
+    "0": {
+      "linhas": 56745,
+      "fraudes": 94,
+      "taxa_fraude": 0.001657,
+      "sha256_indices": "c041cddf419cdc11de8356c75a65bb5907c83c07edc35ded70eb6f1e55546cb7"
+    },
+    "1": {
+      "linhas": 56745,
+      "fraudes": 95,
+      "taxa_fraude": 0.001674,
+      "sha256_indices": "747c8d875613426b77b97499c8a13789e1ab7fed0dd8311be142b9daaaf8f315"
+    },
+    "2": {
+      "linhas": 56745,
+      "fraudes": 95,
+      "taxa_fraude": 0.001674,
+      "sha256_indices": "060e7c75fdb8c107e88388a55a1addff013f16974b5211f61f2bb36445d0bb37"
+    }
+  }
+}
